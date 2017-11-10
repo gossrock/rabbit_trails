@@ -10,15 +10,18 @@ __pycache__/
 .Python
 env/
 build/
+bin/
 develop-eggs/
 dist/
 downloads/
 eggs/
 .eggs/
+include/
 lib/
 lib64/
 parts/
 sdist/
+share/
 var/
 wheels/
 *.egg-info/
@@ -34,6 +37,7 @@ wheels/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+pip-selfcheck.json
 
 # Unit test / coverage reports
 htmlcov/
