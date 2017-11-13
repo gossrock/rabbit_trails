@@ -149,4 +149,48 @@ print(namedtuple_test3)
 print(namedtuple_test4)
 
 
+##################
+# multiple types #
+##################
+from typing import Union, Optional, overload, Any
+
+
+# 'Union' will take multiple types and allow all of them as options
+# 'Optional' will allow it to also be None
+def foo4(bar:Union[int,str, MyClass]) -> Optional[str]:
+	if type(bar) is int:
+		return str(bar)
+	elif type(bar) is str:
+		return None
+	else:
+		return None
+	
+val1:str = foo4(5) # error: Incompatible types in assignment (expression has type "Optional[str]", variable has type "str")
+val2:Optional[str] = foo4('a') 
+val3:Any = foo4(3.3) # error: Argument 1 to "foo4" has incompatible type "float"; expected "Union[int, str, MyClass]"
+
+# interestingly the above function without the last else clause gives an error that is related to a potential
+# for the function to not intentially return None. "error: Missing return statement"
+		
+#another approch that is more flexable is 
+@overload
+def foo5(bar: int) -> str: ...
+@overload
+def foo5(bar: str) -> None: ...
+def foo5(bar):
+	if type(bar) is int:
+		return str(bar)
+	elif type(bar) is str:
+		return None
+	else:
+		return None
+		
+val4:str = foo5(5)
+val5:None = foo5('a') #error: "foo5" does not return a value
+val6:Any = foo5(3.3) # error: No overload variant of "foo5" matches argument types [builtins.float]
+	
+
+
+
+
 
