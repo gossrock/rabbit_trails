@@ -13,7 +13,16 @@
 # So it may not be a completely bad Idea but just not included so as to not 
 # encurage the use of classproperties 
 #
-
+# (By the way, I started trying to do type anotation on this file. mypy completely chokes.
+# It included some fun errors such as:
+#	classproperty.py:90: error: Name 'prop' already defined
+#	classproperty.py:90: error: Name 'prop' is not defined
+# (I'm sorry, is it "already defined" or "not defined")
+#
+# and:
+#	classproperty.py:107: error: "PropertySetting" has no attribute "prop"; maybe "_prop"?
+#
+# dispite the fact that the whole point is to make it a propery.
 
 class classproperty:
 	'''
