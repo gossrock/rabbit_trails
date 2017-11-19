@@ -77,6 +77,6 @@ def makeGrid(col_widths:List[int], row_heights:List[int], bc:BorderChars) -> str
 if __name__=='__main__':
 	print(makeGrid([4, 4, 4, 4], [2, 2, 2, 2], SmplBdr))
 	print(makeGrid([3,2, 1], [1, 2, 3, 4], StdBdr))
-	#print(makeGrid([5, 4, 3, 2, 1], [2, 1], BoldBdr))
-	#print(makeGrid([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], DblBdr))
+	print(makeGrid([5, 4, 3, 2, 1], [2, 1], BoldBdr))
+	print(makeGrid([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], DblBdr))
 			
