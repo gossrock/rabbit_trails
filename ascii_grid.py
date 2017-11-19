@@ -14,7 +14,7 @@ class BorderChars(NamedTuple):
 	horiz:str
 	vert:str
 	cross:str
-	
+SmplBdr = BorderChars(tl='+', tr='+', bl='+', br='+', lT='+', rT='+', tT='+', bT='+', horiz='-', vert='|', cross='+')
 StdBdr = BorderChars(tl='┌', tr='┐', bl='└', br='┘', lT='├', rT='┤', tT='┬', bT='┴', horiz='─', vert='│', cross='┼')
 BoldBdr = BorderChars(tl='┏', tr='┓', bl='┗', br='┛', lT='┣', rT='┫', tT='┳', bT='┻', horiz='━', vert='┃', cross='╋')
 DblBdr = BorderChars(tl='╔', tr='╗', bl='╚', br='╝', lT='╠', rT='╣', tT='╦', bT='╩', horiz='═', vert='║', cross='╬')
@@ -75,7 +75,8 @@ def makeGrid(col_widths:List[int], row_heights:List[int], bc:BorderChars) -> str
 	return grid
 				
 if __name__=='__main__':
+	print(makeGrid([4, 4, 4, 4], [2, 2, 2, 2], SmplBdr))
 	print(makeGrid([3,2, 1], [1, 2, 3, 4], StdBdr))
-	print(makeGrid([5, 4, 3, 2, 1], [2, 1], BoldBdr))
-	print(makeGrid([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], DblBdr))
+	#print(makeGrid([5, 4, 3, 2, 1], [2, 1], BoldBdr))
+	#print(makeGrid([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], DblBdr))
 			
