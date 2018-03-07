@@ -263,6 +263,12 @@ class Immutable4:
     and I thought I would play with those too.
 '''
 
+'''
+    Here we have a method (inspired by my hackings on 3.7 dataclasses [see below])
+    I really don't like the inner class hack but it's nessisary to have somthing that
+    is mutable during the '__new__/__init__' stage that is then patched into being
+    an inmmutable.
+'''
 
 class ImmutableBase:
     one: int
